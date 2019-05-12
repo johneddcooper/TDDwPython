@@ -28,7 +28,7 @@ class NewVisitorTest(LiveServerTestCase):
                 time.sleep(0.5)
 
 
-    def test_can_start_a_list_and_for_one_user(self):
+    def test_can_start_a_list_for_one_user(self):
         # Edish has heard about a cool new online to-do app. She goes
         # to check out it's home page.
         self.browser.get(self.live_server_url)
@@ -80,11 +80,18 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertRegex(edith_list_url, '/lists/.+')
 
         # Now a new user, Francis, comes along to the site.
-
+        
         ## We use a new browser session to make sure that no information 
         ## of Edith's is coming through from cookies, etc
         self.browser.quit()
         self.browser = webdriver.Firefox()
+
+        # Francis visits the home page. There is no sign of Edith's list
+        self.browser.get(self.live_server_url)
+        page_text = self.browser.find_element_by_tag_name('body').text
+        self.assertNotIn('Buy peacock feathers', page_text)
+        self.assertNotIn('make a fly', page_text)
+        
 
         # Francis starts a new list by entering a new item. He
         # is less interesting than Edith...
