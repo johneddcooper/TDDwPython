@@ -6,3 +6,4 @@ geckodriver.exe
 db.sqlite3
 geckodriver.log
 .vscode/settings.json
+static/
