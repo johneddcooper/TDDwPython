@@ -2,3 +2,7 @@
 "geckodriver.log"  
 '__pycache__'  
 "*.pyc"  
+geckodriver.exe
+db.sqlite3
+geckodriver.log
+.vscode/settings.json
