@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 django = "~=1.11"
 selenium = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
