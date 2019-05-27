@@ -31,9 +31,6 @@ else:
     SECRET_KEY = 'insecure-ket-for-dev'
     ALLOWED_HOSTS = []
 
-ALLOWED_HOSTS = ['*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
